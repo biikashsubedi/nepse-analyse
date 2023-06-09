@@ -1,0 +1,296 @@
+/** New CSS for new static design */
+.dashboard_order {
+    width: 20%;
+    float: left;
+    padding: 15px;
+}
+.dashboard_order a:hover {
+    text-decoration: none;
+}
+
+.number_count span {
+    font-size: 80px;
+    font-weight: 400;
+}
+
+.latest-order-list h3 {
+    margin: 0;
+}
+
+.custom-list-group {
+    margin: 0 0 10px;
+    padding: 10px 0 0;
+    list-style: none;
+    overflow: auto;
+}
+
+.custom-list-group li {
+    border-bottom: solid 1px #dddddd;
+    padding: 7px 0;
+    word-wrap: break-word;
+}
+
+.custom-list-group li:last-child {
+    border-bottom: none;
+}
+
+.custom-list-group li a {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.span-time {
+    color: #ceb8b8;
+}
+
+.span-num {
+    display: inline-block;
+    float: left;
+}
+
+.stat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stat-list h4 {
+    margin: 0;
+}
+
+.stat-list li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.stat-list li:last-child {
+    margin-bottom: 0;
+}
+
+.stat-percent {
+    float: right;
+    font-size: 11px;
+}
+
+.stat-list .progress {
+    height: 5px;
+    margin: 3px 0 0;
+}
+
+.stat-percent span {
+    margin-right: 5px;
+}
+
+.progress-outer {
+    position: relative;
+    padding-left: 12px;
+}
+
+.span-legend {
+    position: absolute;
+    left: 0;
+    top: -4px;
+    width: 10px;
+    height: 11px;
+    z-index: 9;
+}
+
+.donot-div {
+    height: 85px;
+    margin-bottom: 5px;
+}
+
+#map {
+    height: 411px;
+    border: 0;
+    width: 100%;
+
+}
+
+/** End **/
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.shipment-sub p {
+    color: #8da0aa;
+    margin-bottom: 0;
+}
+
+.shipment-sub p i {
+    color: #8da0aa;
+}
+
+.listing-section {
+    padding: 10px 10px;
+}
+
+.process h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.process p {
+    color: #d00f02;
+    margin-bottom: 0;
+}
+
+.shipment-sub .process p i {
+    color: #666668;
+}
+
+.listing-section {
+    padding: 10px 10px;
+}
+
+.listing-section .process h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.shipment-sub small {
+    color: #8da0aa;
+    font-size: 10px;
+}
+
+.shipment-sub label {
+    color: #0093d9;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.listing-section ul {
+    list-style: none;
+}
+
+.listing-section ul {
+    padding-left: 0;
+}
+
+.listing-section ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.listing-section ul li:last-child {
+    border-bottom: none;
+}
+
+.listing-section ul li h6 {
+    color: #8da0aa;
+    padding: 5px 0;
+    margin: 0;
+}
+
+.listing-section ul li h6 span {
+    color: #0093d9;
+}
+
+.listing-section {
+    background: #fff;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.btn-customize {
+    width: 100%;
+    background: transparent !important;
+    color: #0093d9 !important;
+    border: 1px solid #8da0aa !important;
+}
+
+.btn-customize:hover, .btn-customize:focus {
+    background: #0093d9;
+}
+
+.payment-system p {
+    color: #d00f02;
+    margin-bottom: 0;
+}
+
+.payment-system i {
+    color: #d00f02 !important;
+    border: 1px solid #ddd;
+    padding: 4px;
+    border-radius: 100%;
+    font-size: 10px;
+}
+
+/*****************************************************************/
+
+.progress-outer {
+    /* background: #282828;
+     padding: 70px 100px;
+     margin: 50px 0;*/
+    box-shadow: 0 0 10px rgba(209, 219, 231, 0.7);
+}
+
+.progres {
+    position: relative;
+    height: 3px;
+    margin: 0;
+    overflow: visible;
+    background: #ddd;
+
+}
+
+.progres .progress-bar {
+    border-radius: 2px;
+}
+
+.progress-bar-striped-red {
+    /*background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, */
+(transparent 25 %, transparent 50 %,
+rgba(255, 255, 255, 0.15) 50 %,
+rgba(255, 255, 255, 0.15) 75 %,
+transparent 75 %, transparent);
+
+    background-size: 1rem 1rem;
+    background-color: #d00f02 !important;
+}
+
+.progress-bar-striped {
+    /*background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, */
+(transparent 25 %, transparent 50 %,
+rgba(255, 255, 255, 0.15) 50 %,
+rgba(255, 255, 255, 0.15) 75 %,
+transparent 75 %, transparent);
+
+    background-size: 1rem 1rem;
+    background-color: #3fae3e;
+}
+
+.progres .progress-value {
+    left: 90%;
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    color: #d00f02;
+    letter-spacing: 5px;
+}
+
+.progress-bar.active {
+    animation: reverse progress-bar-stripes 1s linear infinite, animate-positive 2s;
+}
+
+@-webkit-keyframes animate-positive {
+    0% {
+        width: 0%;
+    }
+}
+
+@keyframes animate-positive {
+    0% {
+        width: 0%;
+    }
+}
+
+/*
+#map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+}*/

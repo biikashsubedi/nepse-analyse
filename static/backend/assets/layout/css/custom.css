@@ -1,0 +1,288 @@
+html,
+body,
+div,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+fieldset,
+input {
+  margin:0; 
+  padding:0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+address,
+caption,
+cite,
+code,
+em {
+  font-size:17px;
+}
+
+hr {
+  border-color:#6A6A6A;
+}
+
+th {
+  font-size:17px; 
+  font-weight:normal; 
+  font-style:normal;
+}
+
+ul,
+ol {
+  display:block; 
+}
+
+fieldset,
+img {
+  border:none;
+}
+
+caption,
+th {
+  text-align:left;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background:#ffffff !important;
+  font-family: 'aileronlight', sans-serif;
+  font-size:17px;
+  color:#6A6A6A;
+  overflow-x:hidden;
+  overflow-y:auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  line-height:25px;
+}
+
+a {
+  font-family: 'aileronlight', sans-serif;
+  font-size:17px;
+  text-decoration:none;
+  outline:none;
+  color:#6A6A6A;
+}
+
+a:hover, 
+a:active,
+a:focus {
+  font-family: 'aileronlight', sans-serif;
+  text-decoration:none;
+  color:#000;
+  outline:none;
+}
+
+li {
+  list-style:none
+}
+
+ul {
+  list-style:none
+}
+
+p {	
+  font-family: 'aileronlight', sans-serif;
+  color:#6A6A6A;
+  line-height:25px;
+}
+
+.home-search-section {
+  display: table;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  padding: 30px 0;
+  -webkit-transition: 0.4s ease-in-out 0s;
+          transition: 0.4s ease-in-out 0s;
+}
+
+.inner-home-search-section {
+  display: table-cell;
+  vertical-align: middle;
+  -webkit-transition: 0.9s ease-in-out 0s;
+          transition: 0.9s ease-in-out 0s;
+}
+
+.home-search-block {
+  margin:  0 auto;
+  text-align: center;
+}
+
+.foodmandu-logo {
+  margin-bottom: 30px;
+  -webkit-transition: 0.3s ease-in-out 0s;
+          transition: 0.3s ease-in-out 0s;
+}
+
+.foodmandu-logo img {
+  display: inline-block;
+  -webkit-transition: 0.3s ease-in-out 0s;
+          transition: 0.3s ease-in-out 0s;
+}
+
+.search-group {
+  display: block !important;
+  margin-bottom: 10px !important;
+  -webkit-transition: 0.3s ease-in-out 0s;
+          transition: 0.3s ease-in-out 0s;
+}
+
+.search-group label {
+  width: 164px;
+  text-align: left;
+}
+
+.search-group .form-control {
+  height: 35px;
+  padding-left: 20px;
+  width: 198px;
+}
+
+.search-group .form-control:focus {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(157,10,14,.6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(157,10,14,.6);
+}
+
+.btn {
+  background-color: #00A33A;
+  color: #fff;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #00812D;
+  color: #fff;
+}
+
+.btn-search {
+  padding: 10px 25px;
+  width: 200px;
+}
+
+@media (min-width:1200px){
+  .container {
+    width:1180px
+  }
+}
+
+.title h2{
+  font-size: 30px;
+  margin: 30px 0 !important;
+}
+
+.search-group{
+  margin: 20px 0;
+}
+
+.date-input{
+  width: 80%;
+  margin-left: 15px;
+}
+
+.search_field{
+  width:80%;
+}
+
+@media (max-width:1440px){
+  .date-input{
+    width: 75%;
+    margin-left: 15px;
+  }
+
+  .search_field{
+    width:75%;
+  }
+}
+
+@media (max-width:1274px){
+  .date-input{
+    width: 70%;
+    margin-left: 15px;
+  }
+
+  .search_field{
+    width:70%;
+  }
+}
+
+@media (max-width:1200px){
+  .date-input{
+    width: 73%;
+    margin-left: 15px;
+  }
+
+  .search_field{
+    width:75%;
+  }
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+   
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.form-horizontal .control-label {
+  text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

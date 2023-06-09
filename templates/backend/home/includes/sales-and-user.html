@@ -1,0 +1,87 @@
+<!--Row-->
+<div class="row row-sm">
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+        <div class="card custom-card">
+            <div class="card-body">
+                <div class="card-item">
+                    <div class="card-item-icon-new ">
+                        {#{{--                        <img src="../../assets/images/download.png" alt="">--}}#}
+                    </div>
+                    <div class="card-item-title mb-2">
+                        <label
+                                class="main-content-label  mb-1 main-content-label-dashboard">
+                            API Hits
+                        </label>
+                    </div>
+                    <div class="card-item-body">
+                        <div class="card-item-stat">
+                            <h4 class="qty__amt text-success"><strong>{{ apiHit }}</strong></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+        <div class="card custom-card">
+            <div class="card-body">
+                <div class="card-item">
+                    <div class="card-item-icon-new ">
+                        {#{{--                        <img src="../../assets/images/download (1).png" alt="">--}}#}
+                    </div>
+                    <div class="card-item-title mb-2">
+                        <label
+                                class="main-content-label  mb-1 main-content-label-dashboard">Quiz Solves</label>
+                    </div>
+                    <div class="card-item-body">
+                        <div class="card-item-stat">
+                            <h4 class="qty__amt"><a href=""><strong>{{ quizSolved }}</strong></a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+        <div class="card custom-card">
+            <div class="card-body">
+                <div class="card-item">
+                    <div class="card-item-icon-new ">
+                        {#{{--                        <img src="../../assets/images/download (2).png" alt="">--}}#}
+                    </div>
+                    <div class="card-item-title mb-2">
+                        <label
+                                class="main-content-label  mb-1 main-content-label-dashboard">Logins</label>
+                    </div>
+                    <div class="card-item-body">
+                        <div class="card-item-stat">
+                            <h4 class="qty__amt"><a href="" class="text-warning"><strong>{{ logins }}</strong></a></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+        <div class="card custom-card">
+            <div class="card-body">
+                <div class="card-item">
+                    <div class="card-item-icon-new ">
+                        {#                       <img src="../../assets/images/download (3).png" alt="">#}
+                    </div>
+                    <div class="card-item-title mb-2">
+                        <label
+                                class="main-content-label  mb-1 main-content-label-dashboard">Guests</label>
+                    </div>
+                    <div class="card-item-body">
+                        <div class="card-item-stat">
+                            <h4 class="qty__amt"><a href="" class="text-pink"><strong>{{ guests }}</strong></a></h4>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End row-->

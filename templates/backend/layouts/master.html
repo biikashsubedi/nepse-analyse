@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Nepse Analyse</title>
+    {% include 'backend/layouts/layoutHeader.html' %}
+
+    {% block styles %}
+    {% endblock %}
+
+</head>
+
+<body class="main-body leftmenu">
+{% include 'backend/layouts/loader.html' %}
+
+
+<!-- Page -->
+<div class="page">
+    {% include 'backend/layouts/sidebar.html' %}
+    {% include 'backend/layouts/header.html' %}
+
+
+    <!-- Main Content-->
+    <div class="main-content side-content pt-0">
+
+        <div class="container-fluid">
+            <div class="inner-body">
+
+                {% block breadcrumb %}
+                {% endblock %}
+
+                {% block content %}
+                {% endblock %}
+
+            </div>
+        </div>
+    </div>
+    <!-- End Main Content-->
+
+    {% include 'backend/layouts/layoutFooter.html' %}
+
+</div>
+<!-- End Page -->
+
+{% include 'backend/layouts/scriptJs.html' %}
+{% include 'backend/layouts/messages.html' %}
+
+{% block newScripts %}
+{% endblock %}
+
+</body>
+</html>

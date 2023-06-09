@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{csrf_token() }}">
+    <title>Landing Page</title>
+
+    <link rel="stylesheet" href="{{ URL::asset('assets/layout/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+
+    <!-- Custom css -->
+    <link rel="stylesheet" href="{{ URL::asset('assets/layout/assets/owl-carousel/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/layout/assets/owl-carousel/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/layout/css/landing.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/layout/css/mini-banner.css') }}">
+
+</head>
+
+<body>
+<div class="overlay"></div>
+<header class="top-nav">
+    <div class="topnav-content">
+        <div class="logo">
+            <img src="../assets/landingimages/Image 4.png" class="img-fluid" alt="">
+        </div>
+
+        <div class="nav-content d-flex align-items-center">
+            <!-- <div class="dropdown nav-dropdown">
+                <button class="btn btn-default dropdown-toggle btn-dropdown" type="button" id="dropdownMenu1"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Dropdown
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+            </div> -->
+            <div class="nav-dropdown">
+                <select class="form-control btn-dropdown">
+                    <option>Dropdown</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="mobile-image">
+                <img src="../assets/landingimages/top-nav-mob.svg" alt="">
+            </div>
+
+            <div class="nav-button">
+                <button class="btn btn-primary save-button">Save</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!--Left sidebar section-->
+<section class="sidebar">
+    <ul>
+        <li>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default active">
+                    <div class="panel-heading active" role="tab" id="headingOne">
+                        <h4 class="panel-title d-flex justify-content-between">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                               aria-expanded="true" aria-controls="collapseOne" class="d-flex align-items-center">
+                                <i class="fas fa-sort-down panel-icon"></i>
+                                <div class="panel-image">
+                                    <img src="../assets/landingimages/mini-banner-white.svg" class="white-img"
+                                         alt="">
+                                    <img src="../assets/landingimages/mini-banner.svg" class="default-img" alt="">
+                                </div>
+                                Mini Banner
+                            </a>
+
+                            <div class="panel-right-content align-items-center">
+
+                                <div class="right-icon">
+                                    <i class="fas fa-eye-slash eye-crossed"></i>
+                                    <!-- <img src="../assets/landingimages/eye.svg" alt=""> -->
+                                </div>
+                                <div class="right-icon">
+                                    <img src="../assets/landingimages/drag-icon.svg" alt="">
+                                </div>
+                            </div>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                         aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <div class="panel-option">
+                                <a href="#">
+                                    <div class="new-image active justify-content-between">
+                                        <div class="option-left-content d-flex align-items-center">
+                                            <div class="side-icon">
+                                                <img src="../assets/landingimages/sidebar-img-option-white.svg"
+                                                     class="white-img" alt="">
+                                                <img src="../assets/landingimages/sidebar-img-option.svg"
+                                                     class="default-img" alt="">
+                                            </div>
+                                            Image
+                                        </div>
+                                        <div class="right-eye-content align-items-center">
+                                            <div class="right-icon">
+                                                <i class="fas fa-eye-slash eye-crossed"></i>
+
+                                                <!-- <img src="../assets/landingimages/eye.svg" alt=""> -->
+                                            </div>
+                                            <div class="right-icon">
+                                                <img src="../assets/landingimages/drag-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="new-image justify-content-between">
+                                        <div class="option-left-content d-flex align-items-center">
+                                            <div class="side-icon">
+                                                <!-- <img src="../assets/landingimages/sidebar-img-option-white.svg"
+                                                    class="white-img" alt=""> -->
+                                                <!-- <img src="../assets/landingimages/sidebar-img-option.svg"
+                                                    class="default-img" alt=""> -->
+                                                <img src="../assets/landingimages/food-item-img.png"
+                                                     class="sidebar-img" alt="">
+                                            </div>
+                                            Food Item 1
+                                        </div>
+                                        <div class="right-eye-content">
+                                            <div class="right-icon">
+                                                <img src="../assets/landingimages/eye.svg" alt="">
+                                            </div>
+                                            <div class="right-icon">
+                                                <img src="../assets/landingimages/drag-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <div class="new-image">
+                                    <a href="#" class="d-flex align-items-center add-image">
+                                        <i class="fas fa-plus-square"></i>Add
+                                        Image</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title d-flex justify-content-between">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+                               aria-expanded="true" aria-controls="collapseTwo"
+                               class="collapsed d-flex align-items-center">
+                                <i class="fas fa-sort-down panel-icon"></i>
+                                <div class="panel-image">
+                                    <img src="../assets/landingimages/banner-white.svg" class="white-img" alt="">
+                                    <img src="../assets/landingimages/banner.svg" class="default-img" alt="">
+                                </div>
+                                Banner
+                            </a>
+                            <div class="panel-right-content">
+                                <div class="right-icon">
+                                    <img src="../assets/landingimages/eye.svg" alt="">
+                                </div>
+                                <div class="right-icon">
+                                    <img src="../assets/landingimages/drag-icon.svg" alt="">
+                                </div>
+                            </div>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel"
+                         aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <div class="panel-option">
+                                <a href="#">
+                                    <div class="new-image justify-content-between">
+                                        <div class="option-left-content d-flex align-items-center">
+                                            <div class="side-icon">
+                                                <img src="../assets/landingimages/sidebar-img-option-white.svg"
+                                                     class="white-img" alt="">
+                                                <img src="../assets/landingimages/sidebar-img-option.svg"
+                                                     class="default-img" alt="">
+                                            </div>
+                                            Image
+                                        </div>
+                                        <div class="right-eye-content">
+                                            <div class="right-icon">
+                                                <img src="../assets/landingimages/eye.svg" alt="">
+                                            </div>
+                                            <div class="right-icon">
+                                                <img src="../assets/landingimages/drag-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="new-image justify-content-between">
+                                        <div class="option-left-content d-flex align-items-center">
+                                            <div class="side-icon">
+                                                <img src="../assets/landingimages/sidebar-img-option-white.svg"
+                                                     class="white-img" alt="">
+                                                <img src="../assets/landingimages/sidebar-img-option.svg"
+                                                     class="default-img" alt="">
+                                            </div>
+                                            Image
+                                        </div>
+                                        <div class="right-eye-content">
+                                            <div class="right-icon">
+                                                <img src="../assets/landingimages/eye.svg" alt="">
+                                            </div>
+                                            <div class="right-icon">
+                                                <img src="../assets/landingimages/drag-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <div class="new-image">
+                                    <a href="#" class="d-flex align-items-center add-image">
+                                        <i class="fas fa-plus-square"></i>Add Image</a>
+                                </div>
+                            </div>
+                            <div class="outer-options">
+                                <div class="panel-heading single-option align-items-center">
+                                    <div class="single-option-item">
+                                        <a href="#" class="d-flex align-items-center">
+                                            <img src="../assets/landingimages/category-white.svg"
+                                                 class="white-img single-img" alt="">
+                                            <img src="../assets/landingimages/category.svg"
+                                                 class="default-img single-img" alt="">
+                                            Category</a>
+                                    </div>
+                                    <div class="single-right-content">
+                                        <div class="right-icon">
+                                            <img src="../assets/landingimages/eye.svg" alt="">
+                                        </div>
+                                        <div class="right-icon">
+                                            <img src="../assets/landingimages/drag-icon.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel-heading single-option align-items-center">
+                                    <div class="single-option-item">
+                                        <a href="#" class="d-flex align-items-center">
+                                            <img src="../assets/landingimages/brand-tags-white.svg"
+                                                 class="white-img single-img" alt="">
+                                            <img src="../assets/landingimages/brand-tags.svg"
+                                                 class="default-img single-img" alt="">
+                                            Brand/Tags</a>
+                                    </div>
+                                    <div class="single-right-content">
+                                        <div class="right-icon">
+                                            <img src="../assets/landingimages/eye.svg" alt="">
+                                        </div>
+                                        <div class="right-icon">
+                                            <img src="../assets/landingimages/drag-icon.svg" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title d-flex justify-content-between">
+                            <a class="collapsed d-flex align-items-center" role="button" data-toggle="collapse"
+                               data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+                               aria-controls="collapseThree">
+                                <i class="fas fa-sort-down panel-icon"></i>
+                                <div class="panel-image">
+                                    <img src="../assets/landingimages/product-col-white.svg" class="white-img"
+                                         alt="">
+                                    <img src="../assets/landingimages/product-col.svg" class="default-img" alt="">
+                                </div>
+                                Products Collection
+                            </a>
+                            <div class="panel-right-content">
+                                <div class="right-icon">
+                                    <img src="../assets/landingimages/eye.svg" alt="">
+                                </div>
+                                <div class="right-icon">
+                                    <img src="../assets/landingimages/drag-icon.svg" alt="">
+                                </div>
+                            </div>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel"
+                         aria-labelledby="headingThree">
+                        <div class="panel-body">
+                            <div class="panel-option">
+                                <a href="#">
+                                    <div class="new-image justify-content-between">
+                                        <div class="option-left-content d-flex align-items-center">
+                                            <div class="side-icon">
+                                                <img src="../assets/landingimages/sidebar-img-option-white.svg"
+                                                     class="white-img" alt="">
+                                                <img src="../assets/landingimages/sidebar-img-option.svg"
+                                                     class="default-img" alt="">
+                                            </div>
+                                            Image
+                                        </div>
+                                        <div class="right-eye-content">
+                                            <div class="right-icon">
+                                                <img src="../assets/landingimages/eye.svg" alt="">
+                                            </div>
+                                            <div class="right-icon">
+                                                <img src="../assets/landingimages/drag-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="new-image">
+                                    <a href="#" class="d-flex align-items-center add-image">
+                                        <i class="fas fa-plus-square"></i>View All Collection</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFour">
+                        <h4 class="panel-title d-flex justify-content-between">
+                            <a class="collapsed d-flex align-items-center" role="button" data-toggle="collapse"
+                               data-parent="#accordion" href="#collapseFour" aria-expanded="false"
+                               aria-controls="collapseFour">
+                                <i class="fas fa-sort-down panel-icon"></i>
+                                <div class="panel-image">
+                                    <img src="../assets/landingimages/category-col-white.svg" class="white-img"
+                                         alt="">
+                                    <img src="../assets/landingimages/category-col.svg" class="default-img" alt="">
+                                </div>
+                                Category Collection
+                            </a>
+                            <div class="panel-right-content">
+                                <div class="right-icon">
+                                    <img src="../assets/landingimages/eye.svg" alt="">
+                                </div>
+                                <div class="right-icon">
+                                    <img src="../assets/landingimages/drag-icon.svg" alt="">
+                                </div>
+                            </div>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel"
+                         aria-labelledby="headingFour">
+                        <div class="panel-body">
+                            <div class="panel-option">
+                                <a href="#">
+                                    <div class="new-image justify-content-between">
+                                        <div class="option-left-content d-flex align-items-center">
+                                            <div class="side-icon">
+                                                <img src="../assets/landingimages/sidebar-img-option-white.svg"
+                                                     class="white-img" alt="">
+                                                <img src="../assets/landingimages/sidebar-img-option.svg"
+                                                     class="default-img" alt="">
+                                            </div>
+                                            Image
+                                        </div>
+                                        <div class="right-eye-content">
+                                            <div class="right-icon">
+                                                <img src="../assets/landingimages/eye.svg" alt="">
+                                            </div>
+                                            <div class="right-icon">
+                                                <img src="../assets/landingimages/drag-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="new-image">
+                                    <a href="#" class="d-flex align-items-center add-image">
+                                        <i class="fas fa-plus-square"></i>View All Category</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingFive">
+                        <h4 class="panel-title d-flex justify-content-between">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive"
+                               aria-expanded="true" aria-controls="collapseFive"
+                               class="collapsed d-flex align-items-center">
+                                <i class="fas fa-sort-down panel-icon"></i>
+                                <div class="panel-image">
+                                    <img src="../assets/landingimages/ads-banner-white.svg" class="white-img"
+                                         alt="">
+                                    <img src="../assets/landingimages/ads-banner.svg" class="default-img" alt="">
+                                </div>
+                                Ads Banner
+                            </a>
+                            <div class="panel-right-content">
+                                <div class="right-icon">
+                                    <img src="../assets/landingimages/eye.svg" alt="">
+                                </div>
+                                <div class="right-icon">
+                                    <img src="../assets/landingimages/drag-icon.svg" alt="">
+                                </div>
+                            </div>
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel"
+                         aria-labelledby="headingFive">
+                        <div class="panel-body">
+                            <div class="panel-option">
+                                <a href="#">
+                                    <div class="new-image justify-content-between">
+                                        <div class="option-left-content d-flex align-items-center">
+                                            <div class="side-icon">
+                                                <img src="../assets/landingimages/sidebar-img-option-white.svg"
+                                                     class="white-img" alt="">
+                                                <img src="../assets/landingimages/sidebar-img-option.svg"
+                                                     class="default-img" alt="">
+                                            </div>
+                                            Image
+                                        </div>
+                                        <div class="right-eye-content">
+                                            <div class="right-icon">
+                                                <img src="../assets/landingimages/eye.svg" alt="">
+                                            </div>
+                                            <div class="right-icon">
+                                                <img src="../assets/landingimages/drag-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="new-image justify-content-between">
+                                        <div class="option-left-content d-flex align-items-center">
+                                            <div class="side-icon">
+                                                <img src="../assets/landingimages/sidebar-img-option-white.svg"
+                                                     class="white-img" alt="">
+                                                <img src="../assets/landingimages/sidebar-img-option.svg"
+                                                     class="default-img" alt="">
+                                            </div>
+                                            Image
+                                        </div>
+                                        <div class="right-eye-content">
+                                            <div class="right-icon">
+                                                <img src="../assets/landingimages/eye.svg" alt="">
+                                            </div>
+                                            <div class="right-icon">
+                                                <img src="../assets/landingimages/drag-icon.svg" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="new-image">
+                                    <a href="#" class="d-flex align-items-center add-image">
+                                        <i class="fas fa-plus-square"></i>Add Image</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <div class="add-section">
+        <div class="dropup">
+            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    class="btn btn-primary">
+                    <span class="btn-img">
+                        <i class="fas fa-plus"></i>
+                    </span>
+                Add Section
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                <li>
+                    <a href="#" class="d-flex align-items-center">
+                        <img src="../assets/landingimages/mini-banner.svg" class="drop-default-img" alt="">
+                        <img src="../assets/landingimages/mini-banner-white.svg" class="drop-white-img" alt="">
+                        Mini Banner</a>
+                </li>
+                <li>
+                    <a href="#" class="d-flex align-items-center">
+                        <img src="../assets/landingimages/banner.svg" class="drop-default-img" alt="">
+                        <img src="../assets/landingimages/banner-white.svg" class="drop-white-img" alt="">
+                        Banner</a>
+                </li>
+                <li>
+                    <a href="#" class="d-flex align-items-center">
+                        <img src="../assets/landingimages/category.svg" class="drop-default-img" alt="">
+                        <img src="../assets/landingimages/category-white.svg" class="drop-white-img" alt="">
+                        Category</a>
+                </li>
+                <li>
+                    <a href="#" class="d-flex align-items-center">
+                        <img src="../assets/landingimages/brand-tags.svg" class="drop-default-img" alt="">
+                        <img src="../assets/landingimages/brand-tags-white.svg" class="drop-white-img" alt="">
+                        Brand/ Tags</a>
+                </li>
+                <li>
+                    <a href="#" class="d-flex align-items-center">
+                        <img src="../assets/landingimages/product-col.svg" class="drop-default-img" alt="">
+                        <img src="../assets/landingimages/product-col-white.svg" class="drop-white-img" alt="">
+                        Products Collection</a>
+                </li>
+                <li>
+                    <a href="#" class="d-flex align-items-center">
+                        <img src="../assets/landingimages/category-col.svg" class="drop-default-img" alt="">
+                        <img src="../assets/landingimages/category-col-white.svg" class="drop-white-img" alt="">
+                        Category Collection</a>
+                </li>
+                <li>
+                    <a href="#" class="d-flex align-items-center">
+                        <img src="../assets/landingimages/ads-banner.svg" class="drop-default-img" alt="">
+                        <img src="../assets/landingimages/ads-banner-white.svg" class="drop-white-img" alt="">
+                        Ads Banner</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--left sidebar end-->
+
+<!--Main content-->
+<section class="main-content">
+    <div class="option-form">
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="categories" class="option-heading">Categories</label>
+                <select class="form-control select-option">
+                    <option>All</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sub-categories" class="option-heading">Sub Categories</label>
+                <select class="form-control select-option">
+                    <option>All</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon search-icon"><i class="fas fa-search"></i></span>
+                    <input type="text" class="form-control search-bar" id="inputGroupSuccess1"
+                           aria-describedby="inputGroupSuccess1Status" placeholder="Sadheko Sukuti">
+                    <span class="input-group-btn">
+                            <button class="btn btn-default search-btn">Search</button>
+                        </span>
+                </div>
+                <div class="search-toggle" id="toggle-search1">
+                    <button id="toggle-search" class="btn search-heading-button" type="button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input id='searchBar' style='display: none;' name='search' type='search'>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="sub-categories" class="option-heading">Sort By</label>
+                <select class="form-control sort-option">
+                    <option>Alphabet</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <div class="product-display">
+        <h4 class="product-heading">Products</h4>
+
+        <div class="list-product">
+            <div class="row">
+                <div class="col-lg-custom">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="../assets/landingimages/food-item-img.png" class="card-img-top" alt="">
+                            <div class="icon-top">
+                                <img src="../assets/landingimages/plus-icon.svg" class="plus-icon" alt="">
+
+                                <!-- <div class="selected-icon">
+                                    <i class="fas fa-check"></i>
+                                </div> -->
+                                <!-- <div class="cancel-icon">
+                                    <i class="fas fa-times"></i>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Test Image 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-custom">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="../assets/landingimages/food-item-img.png" alt="">
+                            <!-- <div class="icon-top">
+                                <img src="../assets/landingimages/plus-icon.svg" alt="">
+
+                            </div> -->
+                            <div class="cancel-icon">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Test Image 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-custom">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="../assets/landingimages/food-item-img.png" alt="">
+                            <!-- <div class="icon-top">
+                                <img src="../assets/landingimages/plus-icon.svg" alt="">
+                            </div> -->
+                            <div class="selected-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Test Image 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-custom">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="../assets/landingimages/food-item-img.png" alt="">
+                            <div class="icon-top">
+                                <img src="../assets/landingimages/plus-icon.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Test Image 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-custom">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="../assets/landingimages/food-item-img.png" alt="">
+                            <div class="icon-top">
+                                <img src="../assets/landingimages/plus-icon.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Test Image 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-custom">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="../assets/landingimages/food-item-img.png" alt="">
+                            <div class="icon-top">
+                                <img src="../assets/landingimages/plus-icon.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Test Image 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-custom">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="../assets/landingimages/food-item-img.png" alt="">
+                            <div class="icon-top">
+                                <img src="../assets/landingimages/plus-icon.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Test Image 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-custom">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="../assets/landingimages/food-item-img.png" alt="">
+                            <div class="icon-top">
+                                <img src="../assets/landingimages/plus-icon.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Test Image 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-custom">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="../assets/landingimages/food-item-img.png" alt="">
+                            <div class="icon-top">
+                                <img src="../assets/landingimages/plus-icon.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Test Image 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-custom">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="../assets/landingimages/food-item-img.png" alt="">
+                            <div class="icon-top">
+                                <img src="../assets/landingimages/plus-icon.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Test Image 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-custom">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="../assets/landingimages/food-item-img.png" alt="">
+                            <div class="icon-top">
+                                <img src="../assets/landingimages/plus-icon.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Test Image 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-custom">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="../assets/landingimages/food-item-img.png" alt="">
+                            <div class="icon-top">
+                                <img src="../assets/landingimages/plus-icon.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Test Image 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-custom">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="../assets/landingimages/food-item-img.png" alt="">
+                            <div class="icon-top">
+                                <img src="../assets/landingimages/plus-icon.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Test Image 1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-custom">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <img src="../assets/landingimages/food-item-img.png" alt="">
+                            <div class="icon-top">
+                                <img src="../assets/landingimages/plus-icon.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title">Test Image 1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="button-group align-items-center">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="buttons-section">
+                <button class="btn btn-cancel">Cancel</button>
+                <button class="btn btn-save">Save</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--right sidebar section-->
+<section class="right-sidebar">
+    <div class="right-content">
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header d-flex align-items-center justify-content-between">
+                <strong>Toast Heading</strong>
+                <i class="fas fa-times"></i>
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button> -->
+            </div>
+            <div class="toast-body">
+                Toast Message
+            </div>
+        </div>
+        <div class="heading-text">
+            <h4>Product Collection</h4>
+            <h5 class="sub-heading-text">Sub-heading</h5>
+        </div>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="Middle">
+            <div class="message d-flex align-items-center">
+                <h6>Fill the title field!!</h6>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="desc">Description</label>
+            <textarea type="text" class="form-control" id="desc" placeholder="Middle"> </textarea>
+        </div>
+        <div class="form-group">
+            <label for="date">Start Date</label>
+            <input type="date" class="form-control" id="date">
+        </div>
+        <div class="form-group">
+            <label for="date">End Date</label>
+            <input type="date" class="form-control" id="date">
+        </div>
+
+        <div class="form-group">
+            <label for="add-image">Image</label>
+
+            <a href="#" class=" image-add d-flex align-items-center text-dark justify-content-between">
+                <i class="fas fa-plus-square"></i>
+                Add Image</a>
+        </div>
+
+        <div class="form-group">
+            <label for="add-image">New Image</label>
+            <div class="image">
+                <img src="../assets/landingimages/food-item-img.png" class="img-added" alt="">
+                <div class="cancel-img-icon">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="radio-btn">Design Type</label>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                    Horizontal
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                    Vertical
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="radio-btn">Auto Scroll</label>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                    Yes
+                </label>
+            </div>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                    No
+                </label>
+            </div>
+        </div>
+        <div class="add-product">
+            <button class="btn btn-primary product-btn" id="add-product">
+                    <span class="btn-img">
+                        <i class="fas fa-plus"></i>
+                    </span>
+                Add Product
+            </button>
+        </div>
+    </div>
+
+    <div class="remove-section">
+        <button class="btn btn-primary save-button">
+            Save
+        </button>
+        <button class="btn btn-danger remove-btn">
+                <span class="button-img">
+                    <i class="fas fa-trash-alt"></i>
+                </span>
+            Remove Section
+        </button>
+    </div>
+</section>
+<!--right sidebar end-->
+
+<script src="../js/jquery-1.12.4.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script>
+    $('#toggle-search').on('click', function () {
+        $('#searchBar').toggle('display: inline-block');
+    });
+</script>
+<script>
+    $("#add-product").click(function () {
+        $("body").addClass("overlay-wrapper");
+    });
+</script>
+</body>
+
+</html>

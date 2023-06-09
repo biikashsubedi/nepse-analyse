@@ -1,0 +1,452 @@
+/*Choose Our Service*/
+.left-section {
+    max-height: 560px;
+    overflow-y: auto;
+}
+
+/* .category__accordion__wrapper-new{
+   max-height: 636px;
+   overflow-y: auto;
+} */
+.category__accordion__wrapper .card {
+    border-radius: 0;
+}
+
+.category__accordion__wrapper .card .card-header h2 .btn {
+    color: #002222;
+    text-transform: uppercase;
+}
+
+.category__accordion__wrapper .card .card-header .accordion-toggle .btn-link {
+    font-size: 16px !important;
+}
+
+.category__accordion__wrapper .accordion .card + .card {
+    margin-top: 0 !important;
+}
+
+.cart__accordion__wrapper .accordion .card + .card {
+    margin-top: 0 !important;
+}
+
+.category__accordion__wrapper .card .card-body {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* .category__accordion__wrapper .card .card-header {
+  border-bottom: none !important;
+} */
+.category__accordion__wrapper .card .card-body ul {
+    /* padding-left: 10px; */
+    margin-bottom: 0;
+}
+
+.category__accordion__wrapper .card .card-body ul li {
+    list-style: none;
+    color: #222222;
+}
+
+.category__accordion__wrapper .card .card-body ul li a {
+    color: #222222;
+}
+
+.category__accordion__wrapper .card .card-body ul li:hover a {
+    color: #170C6B
+}
+
+.category__accordion__wrapper .card .card-header h2 .btn:before {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-family: FontAwesome, serif;
+    transition: all .3s ease;
+    font-size: 16px;
+}
+
+.category__accordion__wrapper .card .card-header h2 .btn[aria-expanded=false]:before {
+    content: '\f054';
+}
+
+.category__accordion__wrapper .card .card-header h2 .btn[aria-expanded=true]:before {
+    content: '\f107';
+    font-weight: 700 !important;
+}
+
+.category__accordion__wrapper .card .card-header h2 .btn[aria-expanded=true] {
+    color: #170c6b;
+    font-weight: 700 !important;
+    background-color: #F3F3F3;
+}
+
+.left-section .category__accordion__wrapper .card .card-header h2 .btn[aria-expanded=true] {
+    background-color: #F3F3F3;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.right-content-new .category__accordion__wrapper .card .card-header h2 .btn[aria-expanded=true] {
+    color: #170c6b;
+    font-weight: 700 !important;
+    background-color: transparent;
+}
+
+.search-section-new {
+    width: 100%;
+}
+
+.search-section-new input {
+    padding-left: 10px;
+}
+
+.main-content-label-new {
+    color: #170C6B !important;
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+
+    .add-class {
+        margin-left: -46px !important;
+    }
+
+}
+
+.accordion .card-body {
+    border: none !important;
+}
+
+
+/*Restaurant Search*/
+
+.left-section {
+    padding: 15px 0;
+}
+
+.search-sec {
+    position: relative;
+}
+
+.search-sec span {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.search-sec input {
+    padding-left: 25px;
+}
+
+.left-section .logo img {
+    margin-right: 10px;
+}
+
+.left-section .restaurant-list {
+    overflow-y: auto;
+    max-height: 180px;
+}
+
+.left-section .see-more p {
+    /*padding-top: 10px;*/
+    font-weight: 600;
+    text-align: center;
+    padding: 20px 0;
+
+}
+
+.card-dashboard-calendar-1 {
+    padding: 20px 0;
+}
+
+.card-dashboard-calendar-new {
+    padding: 20px 0;
+}
+
+.panel-content {
+    height: 125px;
+    overflow-y: auto;
+}
+
+.r-content {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    border-bottom: 1px solid #ECEEEF;
+}
+
+.r-content-qty ul li {
+    border: 1px solid #ECEEEF;
+    /* padding: 3px; */
+}
+
+.r-content-qty ul li {
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+    line-height: 18px;
+    text-align: center;
+    color: #4E4E4E;
+}
+
+.r-content-qty ul {
+    list-style: none;
+    padding: 5px;
+}
+
+.food-desc {
+    font-size: 12px;
+    color: #4E4E4E;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+
+.close-icon {
+    align-self: flex-start;
+    display: flex;
+    /* padding-top: 10px; */
+    color: #C33332;
+}
+
+.add-more-items p {
+    color: #00A145;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 15px 0;
+    margin-bottom: 0;
+}
+
+/* .right-content-new{
+max-height: none !important;
+ overflow-y: visible !important;
+} */
+
+.payment-options {
+    padding: 0 15px;
+}
+
+.model-right-content h4 {
+    font-family: 'mulish', serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.topping h5 {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Mulish', serif;
+}
+
+.btn-toppings {
+    border: 1px solid #8f9cc0 !important;
+    min-height: 0 !important;
+    padding: 2px 10px;
+}
+
+.btn-toppings.active {
+    background-color: #8f9cc0 !important;
+    color: #000;
+}
+
+.btn-toppings:hover {
+    background-color: #8f9cc0 !important;
+    color: #000 !important;
+}
+
+.btn-toppings.active:hover {
+    background-color: #8f9cc0 !important;
+    color: #000 !important;
+}
+
+.model-right-content p {
+    font-size: 16px;
+    font-weight: 600;
+    color: #4CCE4A;
+    font-family: 'Mulish', serif;
+}
+
+.modal-cart {
+    display: flex;
+}
+
+.modal-cart .cart-plus-minus {
+    border: 1px solid #e8e8e8;
+    display: inline-block;
+    height: 34px;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 30px;
+}
+
+.modal-cart .cart-plus-minus input.cart-plus-minus-box {
+    border: none;
+    color: #8f8f8f;
+    float: none;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    padding-left: 10px;
+
+}
+
+.modal-cart .cart-add-items {
+    display: flex;
+    flex-direction: column;
+}
+
+.dec, .inc {
+    background-color: #fff !important;
+    line-height: 20px;
+    font-size: 10px;
+    padding: 0 5px;
+    border: 1px solid #ebebeb;
+}
+
+.modal-cart .add-cart {
+    background-color: #170C6A;
+    color: #fff;
+    margin-left: 10px;
+    width: 170px;
+}
+
+.modal-cart .add-cart span {
+    margin-right: 10px;
+}
+
+.show-estimate {
+    padding: 0 15px;
+}
+
+.show-estimate span {
+    color: #4CCE4A;
+    font-size: 12px;
+    font-family: 'Mulish', serif;
+    font-weight: 400;
+}
+
+.grand-amount-new {
+    background-color: #F6F5FC !important;
+    color: #000;
+}
+
+.border-grey {
+    border: 1px solid #8f9cc0;
+    border-radius: 3px;
+}
+
+.model-right-content .nav-pills .nav-link.active {
+    background-color: #8f9cc0 !important;
+}
+
+.panel-content .food-price {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+@media (min-width: 1300px) {
+    .panel-content .food-desc {
+        width: 192px;
+        margin-right: 5px;
+    }
+}
+
+.product-list .icon-top-label {
+    position: absolute;
+    top: 8px;
+    left: 5px;
+}
+
+.product-list .icon-top-label span {
+    color: #fff;
+    font-size: 12px;
+    background-color: orange;
+    border-radius: 11px;
+    padding: 3px 10px;
+}
+
+.product-list .icon-top-label-2 {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+}
+
+.product-list .icon-top-label-2 span {
+    color: #fff;
+    font-size: 12px;
+    background-color: #de137f;
+    border-radius: 11px;
+    padding: 3px 10px;
+}
+.product-list .icon-top-label-3 {
+    position: absolute;
+    top: 90px;
+    left: 5px;
+}
+
+.product-list .icon-top-label-3 span {
+    color: #fff;
+    font-size: 12px;
+    background-color: #2e2e2e;
+    border-radius: 11px;
+    padding: 3px 10px;
+}
+
+.pl-10 {
+    padding-left: 10px;
+}
+
+.pr-15 {
+    padding-right: 15px;
+}
+
+.px-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.input-group-bg {
+    background-color: #f0fbf0;
+}
+
+.add-coupon-div {
+    padding: 10px 15px 15px 10px;
+}
+
+.cart__accordion__wrapper .card .card-header {
+    border-bottom: none !important;
+}
+
+.left-section .see-more {
+    background-color: #F3F3F3;
+}
+
+.category__accordion__wrapper .card .card-header {
+    border-bottom: none !important;
+}
+
+.model-right-content .nav-pills .nav-item {
+    width: auto !important;
+}
+
+@media (min-width: 1300px)and (max-width: 1500px) {
+    .panel-content .food-desc {
+        width: 115px;
+        margin-right: 5px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1299px) {
+    .panel-content .food-desc {
+        width: 83px;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 991px) {
+    .food-price {
+        margin-right: 5px;
+    }
+}

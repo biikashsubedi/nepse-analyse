@@ -1,0 +1,63 @@
+{% load static %}
+
+<!-- Sidemenu -->
+<div class="main-sidebar main-sidebar-sticky side-menu">
+    <div class="sidemenu-logo">
+        <a class="main-logo" href="">
+            <img src="{% static 'backend/assets/img/nepse.png' %}" class="header-brand-img desktop-logo"
+                 alt="logo" width="100" height="40">
+            <img src="{% static 'backend/assets/img/nepse-sm.png' %}" class="header-brand-img icon-logo"
+                 alt="logo" width="100" height="40">
+            <img src="{% static 'backend/assets/img/nepse.png' %}"
+                 class="header-brand-img desktop-logo theme-logo" alt="logo" width="100" height="40">
+            <img src="{% static 'backend/assets/img/nepse.png' %}"
+                 class="header-brand-img icon-logo theme-logo" alt="logo" width="100" height="40">
+        </a>
+    </div>
+    <div class="main-sidebar-body">
+        <ul class="nav">
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home:index' %}">
+                    <span class="shape1"></span>
+                    <span class="shape2"></span>
+                    <i class='sidemenu-icon ti-home'></i>
+                    <span class="sidemenu-label">Dashboard</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'config:index' %}">
+                    <span class="shape1"></span>
+                    <span class="shape2"></span>
+                    <i class='sidemenu-icon ti-settings'></i>
+                    <span class="sidemenu-label">Config</span></a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'nepse:symbol.index' %}">
+                    <span class="shape1"></span>
+                    <span class="shape2"></span>
+                    <i class='sidemenu-icon fa fa-building'></i>
+                    <span class="sidemenu-label">Symbol</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'nepse:data.index' %}">
+                    <span class="shape1"></span>
+                    <span class="shape2"></span>
+                    <i class='sidemenu-icon fa fa-database'></i>
+                    <span class="sidemenu-label">Nepse Data</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'nepse:csv.index' %}">
+                    <span class="shape1"></span>
+                    <span class="shape2"></span>
+                    <i class='sidemenu-icon fa fa-file-excel'></i>
+                    <span class="sidemenu-label">CSV List</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- End Sidemenu -->

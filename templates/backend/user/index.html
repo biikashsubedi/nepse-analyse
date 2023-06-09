@@ -1,0 +1,82 @@
+{% extends 'backend/layouts/master.html' %}
+{% load static %}
+
+{% block breadcrumb %}
+    {% url 'user:index' as the_url %}
+    {% include 'backend/layouts/breadcrumb.html' with title="User" formPage=True  showPage=True  %}
+{% endblock %}
+
+
+{% block content %}
+    <div class="content-display clearfix">
+        {% include 'backend/layouts/partials/search.html' %}
+        <div class="panel">
+            <div class="panel-box">
+                <div class="table-responsive mt-3">
+                    <div class="card custom-card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered" id="forDataTable">
+                                    <caption></caption>
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">S.N</th>
+                                        <th scope="col">First Name</th>
+                                        <th scope="col">Last Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Mobile Number</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Created On</th>
+                                        <th scope="col">Last Login</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for object in object_list %}
+                                        <tr>
+                                            <th scope="row">{{ forloop.counter }}</th>
+                                            <td>
+                                                {{ object.first_name|title }}
+                                                {% if object.is_superuser %}
+                                                    <span class="badge badge-info">Super User</span>
+                                                {% endif %}
+                                            </td>
+                                            <td>{{ object.last_name|title }}</td>
+                                            <td>{{ object.email }}</td>
+                                            <td>
+                                                <img src="{{ object.image.url }}" alt="user image" width="50"
+                                                     height="50">
+                                            </td>
+                                            <td>{{ object.mobile_number }}</td>
+                                            <td>
+                                                {% if object.is_active %}
+                                                    <span class="badge badge-primary">Active</span>
+                                                {% else %}
+                                                    <span class="badge badge-danger">Inactive</span>
+                                                {% endif %}
+                                            </td>
+                                            <td>
+                                                {{ object.created_at|date:"l d M, h:i A"|default:"N/A" }}
+                                            </td>
+                                            <td>
+                                                {{ object.last_login|date:"l d M, h:i A"|default:"N/A" }}
+                                            </td>
+                                        </tr>
+                                    {% empty %}
+                                        <tr>
+                                            <td colspan="100%"
+                                                class="text-center">No Data Available
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                {% include 'backend/layouts/partials/pagination.html' %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- panel -->
+    </div>
+{% endblock %}

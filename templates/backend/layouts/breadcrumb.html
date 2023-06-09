@@ -1,0 +1,39 @@
+<div class="page-header">
+    <div>
+        <h2 class="main-content-title tx-24 mg-b-5">{{ title }}</h2>
+        <ol class="breadcrumb-5">
+            <div class="breadcrumb flat">
+                <a href="{% url 'home:index' %}" class="active">Home</a>
+                <a href="{{ route }}" class="{% if formPage %}active {% endif %}">{{ title }}</a>
+                {% if formPage %}
+                    <a href="">{% if showPage %} Show {% else %} Create {% endif %} {{ title }}</a>
+                {% endif %}
+            </div>
+        </ol>
+    </div>
+    {% if not formPage %}
+        <div class="d-flex">
+            <div class="justify-content-center">
+                {% if analyse %}
+                    {% if showConvertCsv %}
+                        <button class="float-right btn btn-sm btn-info ml-2"
+                                onclick="window.location='{{ convertCsvUrl }}'"><i
+                                class="fa fa-file-excel"></i> Convert To Csv
+                        </button>
+                    {% endif %}
+
+                    {% if analyseUrl %}
+                        <button class="float-right btn btn-sm btn-secondary ml-2"
+                                onclick="window.location='{{ analyseUrl }}'"><i
+                                class="fa fa-recycle"></i> Process Data
+                        </button>
+                    {% endif %}
+                {% else %}
+                    <button class="float-right btn btn-sm btn-success ml-2" onclick="window.location='create'"><i
+                            class="fa fa-plus"></i> Add New
+                    </button>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+</div>

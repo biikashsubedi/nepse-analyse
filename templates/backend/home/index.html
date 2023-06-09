@@ -1,0 +1,19 @@
+{% extends 'backend/layouts/master.html' %}
+{% load static %}
+
+
+{% block breadcrumb %}
+    <link rel="stylesheet" href="{% static 'backend/assets/css/home.css' %}">
+    {% include 'backend/home/includes/search.html' %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="row row-sm font-family-mullish">
+        <div class="col-sm-12 col-lg-12 col-xl-12">
+{#            {% include 'backend/home/includes/sales-and-user.html' %}#}
+{#            {% include 'backend/home/includes/status-wise-orders-report.blade.html' %}#}
+        </div>
+        {#        {% include 'backend/home/includes/recent-feedback.blade.html' %}#}
+    </div>
+{% endblock %}

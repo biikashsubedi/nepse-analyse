@@ -1,0 +1,97 @@
+{% extends 'backend/auth/app.html' %}
+
+
+{% load static %}
+
+{% block content %}
+
+    <style>
+        .signin-btn {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 14px;
+            background-color: #E5002B;
+            border: none;
+        }
+
+        .signin-btn:hover {
+            background-color: #e5002bf0 !important;
+            border: 1px solid #e5002bf0 !important;
+        }
+
+        .signin-btn:disabled, .signin-btn[disabled] {
+            background-color: #e5002bf0 !important;
+            border: 1px solid #e5002bf0 !important;
+        }
+
+        .forget-psw a {
+            font-weight: 600;
+            font-size: 14px;
+            color: #000;
+        }
+
+        .login-text {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 32px;
+            color: #343434 !important;
+            text-transform: uppercase;
+        }
+    </style>
+    <h5 class="mt-4 text-white login-text"><strong>Login System</strong></h5>
+    <br>
+    <img src="{% static 'backend/assets/auth/user.svg' %}" width="200" height="200"
+         class="ht-200 mb-0" alt="user">
+    </div>
+    </div>
+
+    <div class="col-lg-6 col-xl-7 col-xs-12 col-sm-12 login_form ">
+        <div class="container-fluid">
+            <div class="row row-sm">
+                <div class="card-body mt-2 mb-2">
+                    <form method="post" action="#" autocomplete="off">
+                        {% csrf_token %}
+                        <h5 class="text-left mb-2">Signin to Your Account</h5>
+                        <br>
+                        {% for field in form.visible_fields %}
+                            <div class="form-group text-left {% if form.errors %} has-error {% endif %}">
+                                <div class="row form-group">
+                                    <div class="col-md-12 mb-3 mb-md-0">
+                                        <label class="font-weight-bold"
+                                               for="firstname">{{ field.label }}</label>
+                                        <input type="{{ field.field.widget.input_type }}" id="firstname"
+                                               name="{{ field.html_name }}"
+                                               class="form-control {% if form.errors %} is-invalid {% endif %}"
+                                               placeholder="{{ field.label }}">
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        {% if form.errors %}
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {% for key, value in form.errors.items %}
+                                    {{ value|striptags }}
+                                {% endfor %}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        {% endif %}
+
+                        <button onclick="this.disabled=true;this.form.submit();"
+                                class="btn ripple btn-main-primary btn-block signin-btn">
+                            Sign In
+                        </button>
+                    </form>
+
+                    <div class="text-right mt-5 ml-0">
+                        <div class="mb-1 forget-psw">
+                            <a href="#">Forgot Password </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+<form method="get" action="" class="mb-2">
+    <div class="form-row align-items-center float-right" style="margin-right: 5px">
+        <div class="col-auto mb-2" id=""><label class="sr-only" for="keyword">Search keyword</label>
+            <input type="text" class="form-control" value="{{ request.GET.keyword }}" placeholder="Search Keyword"
+                name="keyword" id="keyword" maxlength="25" autocomplete="nope">
+        </div>
+        <div class="form-row align-items-center">
+            <button class="btn btn-primary mb-2 ml-2" type="submit"><em class="fas fa-search"></em> Go</button>
+        </div>
+    </div>
+</form>

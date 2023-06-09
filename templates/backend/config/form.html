@@ -1,0 +1,78 @@
+{% extends 'backend/layouts/master.html' %}
+
+{% block breadcrumb %}
+    {% url 'config:index' as the_url %}
+    {% include 'backend/layouts/breadcrumb.html' with title="Config" formPage=True route=the_url %}
+{% endblock %}
+
+
+{% block content %}
+    <div class="content-display clearfix">
+        <div class="panel">
+            <div class="panel-box">
+                <div class="table-responsive mt-3">
+                    <div class="card custom-card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <form action="" method="post" enctype="multipart/form-data">
+                                    <div class="form-body">
+                                        {% csrf_token %}
+
+                                        {% for field in form.visible_fields %}
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">
+                                                    {{ field.label }}
+                                                    {% if field.field.required %}
+                                                        <span class="text-danger">*</span>
+                                                    {% endif %}
+                                                </label>
+                                                <div class="col-sm-10">
+                                                    {% if field.html_name == 'status' %}
+                                                        <div>
+                                                            {{ form.status }}
+                                                            <label for="id_status">Active</label>
+                                                        </div>
+                                                    {% elif field.html_name == 'title' %}
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-12">
+                                                                {{ form.title }}
+                                                            </div>
+                                                        </div>
+                                                    {% else %}
+                                                        <input type="{{ field.field.widget.input_type }}"
+                                                               name="{{ field.html_name }}"
+                                                               value="{{ field.value|default_if_none:'' }}"
+                                                               placeholder="{{ field.label }}"
+                                                               class="form-control {% if field.errors %} is-invalid {% endif %}">
+                                                    {% endif %}
+                                                    {% if field.errors %}
+                                                        <span class="invalid-feedback" role="alert"></span>
+                                                        <strong class="invalid-feedback" role="alert">
+                                                            {{ field.errors|striptags }}</strong>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-2 col-form-label"></label>
+                                            <div class="col-sm-10">
+                                                <button type="submit" class="btn btn-primary px-4">
+                                                    <i class="fa fa-plus-square"></i> Submit
+                                                </button>
+                                                <a href="{% url 'config:index' %}"
+                                                   class="btn btn-secondary">
+                                                    <i class="fa fa-arrow-left"></i> Back
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- panel -->
+    </div>
+{% endblock %}

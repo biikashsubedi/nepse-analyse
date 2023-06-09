@@ -1,0 +1,66 @@
+{% extends 'backend/layouts/master.html' %}
+{% load static %}
+
+{% block breadcrumb %}
+    {% url 'nepse:data.index' as the_url %}
+    {% url 'nepse:data.data.process' as convertCsvUrl %}
+    {% include 'backend/layouts/breadcrumb.html' with title="Nepse Data" formPage=False route=the_url analyse=True showConvertCsv=True convertCsvUrl=convertCsvUrl %}
+{% endblock %}
+
+
+{% block content %}
+    <div class="content-display clearfix">
+        {% include 'backend/layouts/partials/search.html' %}
+        <div class="panel">
+            <div class="panel-box">
+                <div class="table-responsive mt-3">
+                    <div class="card custom-card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered" id="forDataTable">
+                                    <caption></caption>
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">S.N</th>
+                                        <th scope="col">Symbol</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">closing</th>
+                                        <th scope="col">opening</th>
+                                        <th scope="col">high</th>
+                                        <th scope="col">low</th>
+                                        <th scope="col">volumn</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for item in object_list %}
+                                        <tr>
+                                            <td style="font: bold">{{ forloop.counter }}.</td>
+                                            <td>{{ item.symbol }} </td>
+                                            <td>
+                                                {{ item.date_time|date:"Y, F d" }}
+                                            </td>
+                                            <td>{{ item.closing }} </td>
+                                            <td>{{ item.opening }} </td>
+                                            <td>{{ item.high }} </td>
+                                            <td>{{ item.low }} </td>
+                                            <td>{{ item.volume }} </td>
+                                        </tr>
+
+                                    {% empty %}
+                                        <tr>
+                                            <td colspan="100%" class="text-center">No Data Available.</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+
+                                {% include 'backend/layouts/partials/pagination.html' %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- panel -->
+    </div>
+{% endblock %}
