@@ -5,13 +5,14 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.db.models import Q
 from django.shortcuts import redirect
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
-
 from nepseAnalyse import settings
 from .models import *
 from django.urls import reverse_lazy
 import requests
 import csv
 import os
+from openpyxl import load_workbook
+from django.shortcuts import render
 
 from ..config.models import Config
 
@@ -25,6 +26,27 @@ class DataIndexView(ListView):
 class CSVIndexView(ListView):
     model = Data
     template_name = "backend/csv/index.html"
+
+    def get_context_data(self, **kwargs):
+        excel_folder = settings.MEDIA_ROOT + '/excel'
+        file_list = []
+        for root, dirs, files in os.walk(excel_folder):
+            for dir in dirs:
+                for root2, dirs2, files2 in os.walk(excel_folder + '/' + dir):
+                    for file_name in files2:
+                        if file_name.endswith('.csv'):
+                            symbol = file_name.replace('_data.csv', '')
+                            file_path = os.path.join(root + '/' + symbol, file_name)
+                            file_list.append({
+                                'symbol': symbol.upper(),
+                                'file_name': file_name,
+                                'file_path': file_path,
+                            })
+
+        context = super().get_context_data(**kwargs)
+        context['object_list'] = {}
+        context['files'] = file_list
+        return context
 
 
 class SymbolIndexView(ListView):

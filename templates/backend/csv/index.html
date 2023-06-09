@@ -141,26 +141,21 @@
 
 
                                 <div class="listing-section">
-                                    <div class="product">
-                                        <div class="image-box">
-                                            <div class="images" id="image-1"></div>
+
+                                    {% for file in files %}
+
+                                        <div class="product">
+                                            <div class="image-box">
+                                                <div class="images" id="image-1"></div>
+                                            </div>
+                                            <div class="text-box">
+                                                <h2 class="item">{{ file.symbol }}</h2>
+                                                <button type="button" name="item-1-button" id="item-1-button">View
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="text-box">
-                                            <h2 class="item">NEPSE</h2>
-                                            <button type="button" name="item-1-button" id="item-1-button">View
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="product">
-                                        <div class="image-box">
-                                            <div class="images" id="image-1"></div>
-                                        </div>
-                                        <div class="text-box">
-                                            <h2 class="item">SHIVM</h2>
-                                            <button type="button" name="item-1-button" id="item-1-button">View
-                                            </button>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
+
                                 </div>
 
 
