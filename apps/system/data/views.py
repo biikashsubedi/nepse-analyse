@@ -189,3 +189,19 @@ class SymbolCSVProcessView(ListView):
             messages.error(self.request, self.error_message)
 
         return redirect(self.success_url)
+
+
+def view_csv(request, pk):
+    folder_name = pk.replace('_data.csv', '')
+    csv_file = os.path.join(settings.MEDIA_ROOT + '/excel/' + folder_name, pk)
+
+    if os.path.exists(csv_file):
+        csv_data = []
+        with open(csv_file, 'r') as file:
+            reader = csv.reader(file)
+            csv_data = list(reader)
+
+        return render(request, 'backend/csv/view.html', {'csv_data': csv_data, 'title': folder_name.upper()})
+
+    messages.error(request, 'CSV file not found.')
+    return redirect(reverse_lazy('nepse:csv.index'))

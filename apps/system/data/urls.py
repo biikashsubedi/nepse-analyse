@@ -11,4 +11,5 @@ urlpatterns = [
     path('symbol/csv-process', SymbolCSVProcessView.as_view(), name='symbol.csv.process'),
 
     path('csv/', CSVIndexView.as_view(), name='csv.index'),
+    path('csv-viewer/<str:pk>/', view_csv, name='csv.viewer'),
 ]

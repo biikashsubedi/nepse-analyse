@@ -63,7 +63,7 @@
 
         /* IMAGES */
         #image-1 {
-            background-image: url("https://cdn-icons-png.flaticon.com/512/8242/8242984.png");
+            background-image: url("{% static 'backend/assets/img/csv.png' %}");
         }
 
 
@@ -150,7 +150,9 @@
                                             </div>
                                             <div class="text-box">
                                                 <h2 class="item">{{ file.symbol }}</h2>
-                                                <button type="button" name="item-1-button" id="item-1-button">View
+                                                <button type="button" name="item-1-button" id="item-1-button"
+                                                        onclick="window.location='{% url 'nepse:csv.viewer' file.file_name %}'">
+                                                    View
                                                 </button>
                                             </div>
                                         </div>
