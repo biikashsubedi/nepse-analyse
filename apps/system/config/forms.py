@@ -7,6 +7,7 @@ class ConfigForm(ModelForm):
     titles = (
         ('symbol', 'Symbol'),
         ('data', 'Data'),
+        ('fundamental', 'Fundamental'),
     )
     title = forms.CharField(label='Title',
                             widget=forms.Select(choices=titles,

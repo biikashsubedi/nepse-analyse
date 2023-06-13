@@ -5,6 +5,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.db.models import Q
 from django.shortcuts import redirect
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
+from config import DATA, SYMBOL
 from nepseAnalyse import settings
 from .models import *
 from django.urls import reverse_lazy
@@ -65,7 +66,7 @@ class SymbolIndexView(ListView):
 
 class SymbolDataProcessView(ListView):
     model = Symbol
-    title = 'symbol'
+    title = SYMBOL
     success_message = "Symbol Synced Successfully."
     error_message = "Failed to sync symbols from the API."
     success_url = reverse_lazy('nepse:symbol.index')
@@ -104,7 +105,7 @@ class SymbolDataProcessView(ListView):
 
 class DataProcessView(ListView):
     model = Data
-    title = 'data'
+    title = DATA
     success_message = "Nepse Data Synced Successfully."
     error_message = "Failed to sync nepse data from the API."
     success_url = reverse_lazy('nepse:data.index')

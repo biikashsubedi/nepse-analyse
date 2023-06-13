@@ -7,6 +7,7 @@ class Config(models.Model):
     titles = {
         ('symbol', 'Symbol'),
         ('data', 'Data'),
+        ('fundamental', 'Fundamental'),
     }
     title = models.CharField(_('Title'), max_length=200, choices=titles)
     type = models.CharField(_('Type'), max_length=200, blank=True, null=True)

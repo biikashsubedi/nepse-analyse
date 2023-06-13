@@ -21,22 +21,38 @@
                                     <thead>
                                     <tr>
                                         <th scope="col">S.N</th>
-                                        <th scope="col">TITLE</th>
-                                        <th scope="col">action</th>
+                                        <th scope="col">symbol</th>
+                                        <th scope="col">paid up capital</th>
+                                        <th scope="col">reserve & surplus</th>
+                                        <th scope="col">net fixed assets</th>
+                                        <th scope="col">investments</th>
+                                        <th scope="col">net current assets</th>
+                                        <th scope="col">net margin</th>
+                                        <th scope="col">operating margin</th>
+                                        <th scope="col">book value per share</th>
+                                        <th scope="col">earning per share</th>
+                                        <th scope="col">price to earnings ratio</th>
+                                        <th scope="col">return on assets</th>
+                                        <th scope="col">return on equity</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     {% for item in object_list %}
                                         <tr>
                                             <td style="font: bold">{{ forloop.counter }}.</td>
-                                            <td>{{ item.title }} </td>
-                                            <td>
-                                                <a href="{% url 'fundamental:data.process' item.id %}">
-                                                    <button class="btn btn-primary"><i class="fa fa-sync"></i> Process
-                                                        Data
-                                                    </button>
-                                                </a>
-                                            </td>
+                                            <td>{{ item.symbol }} </td>
+                                            <td>{{ item.paid_up_capital }} </td>
+                                            <td>{{ item.reserves_and_surplus }} </td>
+                                            <td>{{ item.net_fixed_assets }} </td>
+                                            <td>{{ item.investments }} </td>
+                                            <td>{{ item.net_current_assets }} </td>
+                                            <td>{{ item.net_margin }} </td>
+                                            <td>{{ item.operating_margin }} </td>
+                                            <td>{{ item.book_value_per_share }} </td>
+                                            <td>{{ item.earning_per_share }} </td>
+                                            <td>{{ item.price_to_earnings_ratio }} </td>
+                                            <td>{{ item.return_on_assets }} </td>
+                                            <td>{{ item.return_on_equity }} </td>
                                         </tr>
 
                                     {% empty %}
