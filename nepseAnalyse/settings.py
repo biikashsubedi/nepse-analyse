@@ -47,6 +47,7 @@ SYSTEM_APPS = [
     'apps.system.home',
     'apps.system.config',
     'apps.system.data',
+    'apps.system.fundamental',
 ]
 
 # appending all apps

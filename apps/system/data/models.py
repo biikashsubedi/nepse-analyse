@@ -4,11 +4,22 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
+class Exchange(models.Model):
+    title = models.CharField(_("Title"), max_length=200)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        db_table = 'exchanges'
+        verbose_name_plural = 'Exchange'
+
+
 class Symbol(models.Model):
     title = models.CharField(_("Title"), max_length=200, unique=True)
     symbol = models.CharField(_("Symbol"), max_length=200, blank=True, null=True)
     description = models.TextField(_("Description"), max_length=200, blank=True, null=True)
-    exchange = models.CharField(_("Exchange"), max_length=200, blank=True, null=True)
+    exchange = models.ForeignKey(Exchange, verbose_name=_("Exchange"), on_delete=models.CASCADE)
     type = models.CharField(_("Type"), max_length=200, blank=True, null=True)
     status = models.BooleanField(_("Status"), default=True)
     created_at = models.DateTimeField(_('Created At'), auto_now=True)
@@ -43,5 +54,5 @@ class Data(models.Model):
 
 def print_timestamp(timestamp):
     ...
-    #specify format here
+    # specify format here
     return time.strftime("%Y-%m-%d %H:%M:%S")

@@ -18,6 +18,7 @@ urlpatterns = [
     path('home/', include('apps.system.home.urls')),
     path('config/', include('apps.system.config.urls')),
     path('nepse/', include('apps.system.data.urls')),
+    path('fundamental/', include('apps.system.fundamental.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

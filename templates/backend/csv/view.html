@@ -38,22 +38,14 @@
                                 <table class="table table-bordered" id="forDataTable" style="background-color: #F0EFEF">
                                     <caption></caption>
 
-                                    <thead>
-                                    <tr>
-                                        <th scope="col">S.N</th>
-                                        <th scope="col">Symbol</th>
-                                        <th scope="col">Date</th>
-                                        <th scope="col">closing</th>
-                                        <th scope="col">opening</th>
-                                        <th scope="col">high</th>
-                                        <th scope="col">low</th>
-                                        <th scope="col">volume</th>
-                                    </tr>
-                                    </thead>
                                     <tbody>
                                     {% for item in csv_data %}
                                         <tr>
-                                            <td>{{ forloop.counter }} </td>
+                                            {% if forloop.counter == 1 %}
+                                                <td>S.N </td>
+                                            {% else %}
+                                                <td>{{ forloop.counter|add:"-1" }} </td>
+                                            {% endif %}
                                             {% for cell in item %}
                                                 <td
                                                         style="color:

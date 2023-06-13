@@ -80,11 +80,15 @@ class SymbolDataProcessView(ListView):
                     for item in data:
                         checkIfAlreadyExists = Symbol.objects.filter(symbol=item['symbol']).first()
                         if not checkIfAlreadyExists:
+                            exchangeTitle = item['exchange'].replace('src:Nepsealpha.com', '')
+                            exchange = Exchange.objects.filter(title=exchangeTitle).first()
+                            if not exchange:
+                                exchange = Exchange.objects.create(title=exchangeTitle)
                             Symbol.objects.create(
                                 title=item['full_name'],
                                 symbol=item['symbol'],
                                 description=item['description'],
-                                exchange=item['exchange'].replace('src:Nepsealpha.com', ''),
+                                exchange=exchange,
                                 type=item['type'],
                             )
                     messages.success(self.request, self.success_message)
@@ -179,10 +183,11 @@ class SymbolCSVProcessView(ListView):
 
             with open(file_path, 'w', newline='') as csvfile:
                 writer = csv.writer(csvfile)
+                writer.writerow(['Date', 'Open', 'High', 'Low', 'Close', 'Volume'])
                 for item in items:
                     writer.writerow(
-                        [item.symbol, item.date_time.strftime('%Y-%m-%d'), item.closing, item.opening, item.high,
-                         item.low, item.volume])
+                        [item.date_time.strftime('%Y-%m-%d'), item.opening, item.high, item.low, item.closing,
+                         item.volume])
 
             messages.success(self.request, self.success_message)
         else:
