@@ -89,8 +89,6 @@
                                     </tbody>
                                 </table>
 
-                                {% include 'backend/layouts/partials/pagination.html' %}
-
                             </div>
                         </div>
                     </div>
@@ -105,6 +103,7 @@
         $(document).ready(function () {
             $('#forDataTable').DataTable({
                 processing: true,
+                pageLength: 100
             });
         });
 

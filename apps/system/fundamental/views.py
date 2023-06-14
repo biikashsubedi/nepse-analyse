@@ -19,7 +19,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 class DataIndexView(ListView):
     model = FinancialData
-    paginate_by = 50
+    paginate_by = 100
     template_name = "backend/financial/index.html"
 
 
@@ -65,9 +65,13 @@ class DataProcessView(ListView):
                                                   options=chrome_options)
 
                         driver.get(url)
-                        driver.maximize_window()
-                        buttons = driver.find_elements("xpath", "//div[contains(@id, 'finanace-menu')]/a")
-                        driver.execute_script("arguments[0].click();", buttons[0])
+                        # driver.maximize_window()
+                        try:
+                            buttons = driver.find_elements("xpath", "//div[contains(@id, 'finanace-menu')]/a")
+                            driver.execute_script("arguments[0].click();", buttons[0])
+                        except Exception:
+                            driver.quit()
+                            continue
 
                         sleepTime = 2
                         for i in range(sleepTime, 0, -1):
@@ -91,11 +95,12 @@ class DataProcessView(ListView):
 
                                 for tr in trData:
                                     td_list = tr.find_all('td')
+
                                     if td_list:
                                         key = td_list[0].text.strip()
                                         value = td_list[1].text.strip()
                                         dataDict.update({key.replace(' ', '_').lower(): value})
-                            except AttributeError:
+                            except Exception:
                                 continue
 
                         price = soup.find('div', class_="company-list").find('span', class_='comp-price')
@@ -147,6 +152,7 @@ class DataProcessView(ListView):
                                     data.update({HYDROPOWER[key]: value})
 
                         data.pop('loans_&_long-term_liabilities', None)
+                        data.pop('total_current_liabilities', None)
                         FinancialData.objects.create(**data)
 
             else:
