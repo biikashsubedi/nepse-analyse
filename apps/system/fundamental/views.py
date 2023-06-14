@@ -98,7 +98,7 @@ class DataProcessView(ListView):
                         operatingIncome = 0
                         operatingExpenses = 0
                         data = {}
-                        data.update({'symbol_id': symbol.id})
+                        data.update({'symbol_id': symbol.id, 'quarter': 3, 'year': '2079/2080'})
                         for key, value in dataDict.items():
                             if key in HYDROPOWER:
                                 if key == "operating_income":
