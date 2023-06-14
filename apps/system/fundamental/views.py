@@ -69,7 +69,7 @@ class DataProcessView(ListView):
                         buttons = driver.find_elements("xpath", "//div[contains(@id, 'finanace-menu')]/a")
                         driver.execute_script("arguments[0].click();", buttons[0])
 
-                        sleepTime = 5
+                        sleepTime = 2
                         for i in range(sleepTime, 0, -1):
                             if i == sleepTime:
                                 print("This is waiting countdown")
@@ -82,38 +82,71 @@ class DataProcessView(ListView):
                         soup = BeautifulSoup(html_content, 'html.parser')
                         my_qtr_report_div = soup.find('div', class_='myQtrReport')
 
-                        dataIds = ['balance', 'profitloss', 'keyratios']
+                        dataIds = ['balance', 'profitloss', 'keymetrics', 'keyratios']
                         dataDict = {}
                         for id in dataIds:
-                            balance_div = my_qtr_report_div.find('div', id=id)
-                            trData = balance_div.find('table').find_all('tr')
+                            try:
+                                balance_div = my_qtr_report_div.find('div', id=id)
+                                trData = balance_div.find('table').find_all('tr')
 
-                            for tr in trData:
-                                td_list = tr.find_all('td')
-                                if td_list:
-                                    key = td_list[0].text.strip()
-                                    value = td_list[1].text.strip()
-                                    dataDict.update({key.replace(' ', '_').lower(): value})
+                                for tr in trData:
+                                    td_list = tr.find_all('td')
+                                    if td_list:
+                                        key = td_list[0].text.strip()
+                                        value = td_list[1].text.strip()
+                                        dataDict.update({key.replace(' ', '_').lower(): value})
+                            except AttributeError:
+                                continue
 
                         price = soup.find('div', class_="company-list").find('span', class_='comp-price')
 
                         operatingIncome = 0
                         operatingExpenses = 0
+                        paidUpCapital = 0
+                        reserveAndSurplus = 0
+                        totalCurrentLiabilities = 0
+                        netProfit = 0
+                        loansAndLongTermLiabilities = 0
                         data = {}
-                        data.update({'symbol_id': symbol.id, 'quarter': 3, 'year': '2079/2080', 'price': price.text.strip()})
+                        data.update(
+                            {'symbol_id': symbol.id, 'quarter': 3, 'year': '2079/2080', 'price': price.text.strip()})
                         for key, value in dataDict.items():
                             if key in HYDROPOWER:
                                 if key == "operating_income":
                                     operatingIncome = int(value.replace(',', '').replace('.', ''))
                                 if key == "operating_expenses":
                                     operatingExpenses = int(value.replace(',', '').replace('.', ''))
+                                if key == "paid_up_capital":
+                                    paidUpCapital = int(value.replace(',', '').replace('.', ''))
+                                if key == "reserve_&_surplus":
+                                    reserveAndSurplus = int(value.replace(',', '').replace('.', ''))
+                                if key == "total_current_liabilities":
+                                    totalCurrentLiabilities = int(value.replace(',', '').replace('.', ''))
+                                if key == "net_profit":
+                                    netProfit = int(value.replace(',', '').replace('.', ''))
+                                if key == "loans_&_long-term_liabilities":
+                                    loansAndLongTermLiabilities = int(value.replace(',', '').replace('.', ''))
 
-                                if operatingExpenses > 0 and operatingIncome > 0:
+                                if key == 'operating_margin':
                                     data.update({'operating_margin': operatingIncome - operatingExpenses})
-                                    operatingIncome = 0
-                                    operatingExpenses = 0
+                                elif totalCurrentLiabilities != 0 and loansAndLongTermLiabilities != 0 and paidUpCapital != 0 and reserveAndSurplus != 0:
+                                    if supportedExchange == HYDRO_EXCHANGE:
+                                        debtToEquityRatio = (
+                                                (totalCurrentLiabilities + loansAndLongTermLiabilities) / (
+                                                paidUpCapital + reserveAndSurplus))
+                                        data.update({'debt_to_equity_ratio': debtToEquityRatio})
+                                    totalCurrentLiabilities = 0
+                                    loansAndLongTermLiabilities = 0
+                                    reserveAndSurplus = 0
+                                elif netProfit != 0 and paidUpCapital != 0:
+                                    if supportedExchange == HYDRO_EXCHANGE:
+                                        dividendYield = (netProfit / paidUpCapital) * 100
+                                        data.update({'dividend_yield': dividendYield})
+                                    netProfit = 0
                                 else:
                                     data.update({HYDROPOWER[key]: value})
+
+                        data.pop('loans_&_long-term_liabilities', None)
                         FinancialData.objects.create(**data)
 
             else:

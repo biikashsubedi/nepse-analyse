@@ -6,6 +6,14 @@
     {% include 'backend/layouts/breadcrumb.html' with title="Fundamental Data" formPage=False route=the_url analyse=True %}
 {% endblock %}
 
+{% block styles %}
+    <style>
+        .no-line-break {
+            white-space: nowrap;
+        }
+    </style>
+{% endblock %}
+
 
 {% block content %}
     <div class="content-display clearfix">
@@ -25,18 +33,20 @@
                                         <th scope="col">price</th>
                                         <th scope="col">Quarter</th>
                                         <th scope="col">Year</th>
-                                        <th scope="col">paid up capital</th>
-                                        <th scope="col">reserve & surplus</th>
-                                        <th scope="col">net fixed assets</th>
-                                        <th scope="col">investments</th>
-                                        <th scope="col">net current assets</th>
-                                        <th scope="col">net margin</th>
-                                        <th scope="col">operating margin</th>
-                                        <th scope="col">book value per share</th>
-                                        <th scope="col">earning per share</th>
-                                        <th scope="col">price to earnings ratio</th>
-                                        <th scope="col">return on assets</th>
-                                        <th scope="col">return on equity</th>
+                                        <th scope="col" class="no-line-break">paid up capital</th>
+                                        <th scope="col" class="no-line-break">reserve & surplus</th>
+                                        <th scope="col" class="no-line-break">net fixed assets</th>
+                                        <th scope="col" class="no-line-break">investments</th>
+                                        <th scope="col" class="no-line-break">net current assets</th>
+                                        <th scope="col" class="no-line-break">net margin</th>
+                                        <th scope="col" class="no-line-break">debt to equity ratio</th>
+                                        <th scope="col" class="no-line-break">dividend yield</th>
+                                        <th scope="col" class="no-line-break">operating margin</th>
+                                        <th scope="col" class="no-line-break">book value per share</th>
+                                        <th scope="col" class="no-line-break">earning per share</th>
+                                        <th scope="col" class="no-line-break">price to earnings ratio</th>
+                                        <th scope="col" class="no-line-break">return on assets</th>
+                                        <th scope="col" class="no-line-break">return on equity</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -46,10 +56,10 @@
                                             <td>{{ item.symbol }} </td>
                                             <td>{{ item.price }} </td>
                                             <td>{{ item.quarter }}{% if item.quarter == 1 %}st
-                                                {% elif item.quarter == 2 %}nd
-                                                {% elif item.quarter == 3 %}rd
-                                                {% else %}th
-                                                {% endif %}
+                                            {% elif item.quarter == 2 %}nd
+                                            {% elif item.quarter == 3 %}rd
+                                            {% else %}th
+                                            {% endif %}
 
                                             </td>
                                             <td>{{ item.year }} </td>
@@ -59,6 +69,8 @@
                                             <td>{{ item.investments }} </td>
                                             <td>{{ item.net_current_assets }} </td>
                                             <td>{{ item.net_margin }} </td>
+                                            <td>{{ item.debt_to_equity_ratio }} </td>
+                                            <td>{{ item.dividend_yield }} </td>
                                             <td>{{ item.operating_margin }} </td>
                                             <td>{{ item.book_value_per_share }} </td>
                                             <td>{{ item.earning_per_share }} </td>

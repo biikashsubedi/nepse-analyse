@@ -11,5 +11,10 @@ HYDROPOWER = {
     'earnings_per_share_(eps_annualized_-rs.)': 'earning_per_share',
     'price_to_earning_ratio_(pe_ratio_-_times)': 'price_to_earnings_ratio',
     'return_on_assets_(roa_%)': 'return_on_assets',
-    'return_on_equity_(roe_%)': 'return_on_equity'
+    'return_on_equity_(roe_%)': 'return_on_equity',
+    'total_current_liabilities': 'total_current_liabilities',
+    'loans_&_long-term_liabilities': 'loans_&_long-term_liabilities',
+    'operating_margin': 'operating_margin',
+    'debt_to_equity_ratio': 'debt_to_equity_ratio',
+    'dividend_yield': 'dividend_yield',
 }

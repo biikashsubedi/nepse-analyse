@@ -1,4 +1,5 @@
 FUNDAMENTAL = 'fundamental'
 DATA = 'data'
 SYMBOL = 'symbol'
-SUPPORTED_EXCHANGE = ['Hydro Power']
+HYDRO_EXCHANGE = 'Hydro Power'
+SUPPORTED_EXCHANGE = [HYDRO_EXCHANGE]
