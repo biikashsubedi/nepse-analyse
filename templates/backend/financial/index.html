@@ -12,12 +12,14 @@
             white-space: nowrap;
         }
     </style>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+
 {% endblock %}
 
 
 {% block content %}
     <div class="content-display clearfix">
-        {% include 'backend/layouts/partials/search.html' %}
         <div class="panel">
             <div class="panel-box">
                 <div class="table-responsive mt-3">
@@ -96,4 +98,16 @@
             </div>
         </div><!-- panel -->
     </div>
+{% endblock %}
+
+{% block newScripts %}
+    <script>
+        $(document).ready(function () {
+            $('#forDataTable').DataTable({
+                processing: true,
+            });
+        });
+
+    </script>
+
 {% endblock %}
