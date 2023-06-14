@@ -37,18 +37,18 @@
                                         <th scope="col">Year</th>
                                         <th scope="col" class="no-line-break">paid up capital</th>
                                         <th scope="col" class="no-line-break">reserve & surplus</th>
-                                        <th scope="col" class="no-line-break">net fixed assets</th>
-                                        <th scope="col" class="no-line-break">investments</th>
-                                        <th scope="col" class="no-line-break">net current assets</th>
-                                        <th scope="col" class="no-line-break">net margin</th>
                                         <th scope="col" class="no-line-break">debt to equity ratio</th>
-                                        <th scope="col" class="no-line-break">dividend yield</th>
-                                        <th scope="col" class="no-line-break">operating margin</th>
                                         <th scope="col" class="no-line-break">book value per share</th>
                                         <th scope="col" class="no-line-break">earning per share</th>
                                         <th scope="col" class="no-line-break">price to earnings ratio</th>
                                         <th scope="col" class="no-line-break">return on assets</th>
                                         <th scope="col" class="no-line-break">return on equity</th>
+                                        <th scope="col" class="no-line-break">operating margin</th>
+                                        <th scope="col" class="no-line-break">net margin</th>
+                                        <th scope="col" class="no-line-break">dividend yield</th>
+                                        <th scope="col" class="no-line-break">net fixed assets</th>
+                                        <th scope="col" class="no-line-break">investments</th>
+                                        <th scope="col" class="no-line-break">net current assets</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -67,18 +67,18 @@
                                             <td title="{{ item.year }}">{{ item.year }} </td>
                                             <td title="{{ item.paid_up_capital }}">{{ item.paid_up_capital }} </td>
                                             <td title="{{ item.reserves_and_surplus }}">{{ item.reserves_and_surplus }} </td>
-                                            <td title="{{ item.net_fixed_assets }}">{{ item.net_fixed_assets }} </td>
-                                            <td title="{{ item.investments }}">{{ item.investments }} </td>
-                                            <td title="{{ item.net_current_assets }}">{{ item.net_current_assets }} </td>
-                                            <td title="{{ item.net_margin }}">{{ item.net_margin }} </td>
                                             <td title="{{ item.debt_to_equity_ratio }}">{{ item.debt_to_equity_ratio|floatformat:2 }} </td>
-                                            <td title="{{ item.dividend_yield }}">{{ item.dividend_yield|floatformat:2 }} </td>
-                                            <td title="{{ item.operating_margin }}">{{ item.operating_margin }} </td>
                                             <td title="{{ item.book_value_per_share }}">{{ item.book_value_per_share }} </td>
                                             <td title="{{ item.earning_per_share }}">{{ item.earning_per_share }} </td>
                                             <td title="{{ item.price_to_earnings_ratio }}">{{ item.price_to_earnings_ratio }} </td>
                                             <td title="{{ item.return_on_assets }}">{{ item.return_on_assets }} </td>
                                             <td title="{{ item.return_on_equity }}">{{ item.return_on_equity }} </td>
+                                            <td title="{{ item.operating_margin }}">{{ item.operating_margin }} </td>
+                                            <td title="{{ item.net_margin }}">{{ item.net_margin }} </td>
+                                            <td title="{{ item.dividend_yield }}">{{ item.dividend_yield|floatformat:2 }} </td>
+                                            <td title="{{ item.net_fixed_assets }}">{{ item.net_fixed_assets }} </td>
+                                            <td title="{{ item.investments }}">{{ item.investments }} </td>
+                                            <td title="{{ item.net_current_assets }}">{{ item.net_current_assets }} </td>
                                         </tr>
 
                                     {% empty %}
