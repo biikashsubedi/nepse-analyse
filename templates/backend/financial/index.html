@@ -22,6 +22,7 @@
                                     <tr>
                                         <th scope="col">S.N</th>
                                         <th scope="col">symbol</th>
+                                        <th scope="col">price</th>
                                         <th scope="col">Quarter</th>
                                         <th scope="col">Year</th>
                                         <th scope="col">paid up capital</th>
@@ -43,6 +44,7 @@
                                         <tr>
                                             <td style="font: bold">{{ forloop.counter }}.</td>
                                             <td>{{ item.symbol }} </td>
+                                            <td>{{ item.price }} </td>
                                             <td>{{ item.quarter }}{% if item.quarter == 1 %}st
                                                 {% elif item.quarter == 2 %}nd
                                                 {% elif item.quarter == 3 %}rd

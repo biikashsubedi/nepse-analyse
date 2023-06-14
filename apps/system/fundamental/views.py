@@ -95,10 +95,12 @@ class DataProcessView(ListView):
                                     value = td_list[1].text.strip()
                                     dataDict.update({key.replace(' ', '_').lower(): value})
 
+                        price = soup.find('div', class_="company-list").find('span', class_='comp-price')
+
                         operatingIncome = 0
                         operatingExpenses = 0
                         data = {}
-                        data.update({'symbol_id': symbol.id, 'quarter': 3, 'year': '2079/2080'})
+                        data.update({'symbol_id': symbol.id, 'quarter': 3, 'year': '2079/2080', 'price': price.text.strip()})
                         for key, value in dataDict.items():
                             if key in HYDROPOWER:
                                 if key == "operating_income":
