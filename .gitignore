@@ -86,6 +86,7 @@ media/*
 .env
 db.sqlite3
 
-apps/system/config/migrations/
-apps/system/home/migrations/
-apps/system/data/migrations/
+apps/system/config/migrations/*
+apps/system/home/migrations/*
+apps/system/data/migrations/*
+
